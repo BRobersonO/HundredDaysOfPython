@@ -1,4 +1,4 @@
-from turtle import Screen, Turtle
+from turtle import Turtle
 
 START_LENGTH = 3
 MOVE_DISTANCE = 20
