@@ -19,34 +19,18 @@ player1 = Player(1)
 player2 = Player(2)
 # Ball
 ball = Ball()
-
-# vec = Vec2D(0,60)
-# new = player1.pos() + vec
-
-# tim = Turtle(shape="circle")
-# tim.shapesize(stretch_len=.5, stretch_wid=.5)
-# tim.color("red")
-# tim.pu()
-# tim.goto(new)
-
-# print(player1.distance(tim))
-
+# Player Actions
 screen.onkey(fun=player2.move_up, key='Up')
 screen.onkey(fun=player2.move_down, key='Down')
 
 screen.onkey(fun=player1.move_up, key='w')
 screen.onkey(fun=player1.move_down, key='s')
-
-# Player Class
-# Scoreboard Class
-# Center Line
-# Ball Class
-
+# Game Loop
 game_is_on = True
 
 while game_is_on:
     screen.update()
-    time.sleep(0.05)
+    time.sleep(ball.ball_speed)
     # Move Ball
     ball.move_ball()
     # Richochet Conditions
@@ -54,7 +38,7 @@ while game_is_on:
     if (ball.distance(ball.xcor(),300) < 10 or
         ball.distance(ball.xcor(),-300) < 10):
         ball.ball_bounce('wall')
-    # Off Player
+    # Off Player: (Better to use one distance check alongside an xcor check?)
     if (any(map(lambda coord: ball.distance(coord) < 30, player1.get_collision())) or
         any(map(lambda coord: ball.distance(coord) < 30, player2.get_collision()))):
         ball.ball_bounce('player')

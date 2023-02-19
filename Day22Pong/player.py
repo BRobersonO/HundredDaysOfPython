@@ -17,23 +17,14 @@ class Player(Turtle):
         self.goto(x, y)
         self.speed("fastest")
         self.color("white")
-        # top_vec = Vec2D(0,60)
-        # bot_vec = Vec2D(0,-60)
-        # self.top = self.pos() + top_vec
-        # self.bottom = self.pos() + bot_vec
 
     def move_down(self):
-        # print(self.distance(self.xcor(),300))
         if self.distance(self.xcor(),-300) > 60:
             self.bk(MOVE_DISTANCE)
 
     def move_up(self):
-        # print(self.distance(self.xcor(),300))
         if self.distance(self.xcor(),300) > 60:
-            # key_down = True
-            # while key_down:
-            # TODO key hold mechanic?
-                self.fd(20)
+            self.fd(MOVE_DISTANCE)
 
     def get_collision(self):
         return [(self.xcor(),self.ycor() - 35),
