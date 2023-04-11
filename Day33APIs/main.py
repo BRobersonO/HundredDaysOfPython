@@ -14,8 +14,8 @@ from datetime import datetime as dt
 # print(iss_position)
 
 # Sunrise/Sunset
-MY_LAT = 38.843070
-MY_LONG = -77.279340
+MY_LAT = 38
+MY_LONG = -77
 
 parameters = {
     "lat": MY_LAT,
