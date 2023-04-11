@@ -14,12 +14,10 @@ from datetime import datetime as dt
 # print(iss_position)
 
 # Sunrise/Sunset
-MY_LAT = 38
-MY_LONG = -77
 
 parameters = {
-    "lat": MY_LAT,
-    "lng": MY_LONG,
+    "lat": LAT,
+    "lng": LON,
     "formatted": 0,
 }
 response = requests.get("https://api.sunrise-sunset.org/json", params=parameters)
