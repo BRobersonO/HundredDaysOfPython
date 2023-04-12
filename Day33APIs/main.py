@@ -1,5 +1,11 @@
 import requests
 from datetime import datetime as dt
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+LONG = os.getenv('LONG')
+LAT = os.getenv('LAT')
 
 # response = requests.get(url="http://api.open-notify.org/iss-now.json")
 # response.raise_for_status()
@@ -17,7 +23,7 @@ from datetime import datetime as dt
 
 parameters = {
     "lat": LAT,
-    "lng": LON,
+    "lng": LONG,
     "formatted": 0,
 }
 response = requests.get("https://api.sunrise-sunset.org/json", params=parameters)
