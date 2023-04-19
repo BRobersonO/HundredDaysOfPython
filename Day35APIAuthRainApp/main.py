@@ -13,4 +13,8 @@ weather_params = {
 
 
 response = requests.get(WEATHER_ENDPOINT, params=weather_params)
-print(response.status_code)
+response.raise_for_status()
+weather_data = response.json()
+ids = [dict['id'] for dict in weather_data['weather'] if dict['id'] < 700]
+msg = "Bring an umbrella" if len(ids) > 0 else "No umbrella needed"
+print(msg)
